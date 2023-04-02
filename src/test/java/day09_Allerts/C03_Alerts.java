@@ -46,11 +46,18 @@ public class C03_Alerts extends TestBase {
     driver.get("https://testcenter.techproeducation.com/index.php?page=javascript-alerts");
     Thread.sleep(2000);
     //    Bir metod olusturun: sendKeysAlert
-//3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna
-//    tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
+//3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna   tıklayın
+
+driver.findElement(By.xpath("//button[@onclick='jsPrompt()']")).click();
+    driver.switchTo().alert().sendKeys("Hakan Kara");
+    Thread.sleep(2000);
+    driver.switchTo().alert().accept();
+
+
+    //  result mesajında isminizin görüntülendiğini doğrulayın.
+   String actualResult = driver.findElement(By.xpath("//p[@id='result']")).getText();
+    String expectedTesult= "Hakan Kara";
+    Assert.assertTrue(actualResult.contains(expectedTesult));
+
 }
-
-
-
-
 }
