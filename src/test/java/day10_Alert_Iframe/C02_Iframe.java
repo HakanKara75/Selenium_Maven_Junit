@@ -21,6 +21,7 @@ String actualText=driver.findElement(By.xpath("//p[text()='An iframe with a thin
     WebElement text=driver.findElement(By.xpath("//h1[@class='display-5 fw-bold']"));
     Assert.assertTrue(text.isDisplayed());
 
+
             /*
         Eğer iki tane iframe olsaydı ve 2. frame'e geçmek isteseydim index'i 1 almam gerekicekti
         Örneğin:
