@@ -28,7 +28,5 @@ public class C04_FileDownloadTest extends TestBase {
         String userHome = System.getProperty("user.home")+"/Downloads/b10 all test cases, code.docx";
         boolean isExist= Files.exists(Paths.get(userHome));
         assertTrue(isExist);
-
-
     }
 }
