@@ -43,7 +43,7 @@ public class C01_ScreenShot extends TestBase {
     public void test2() throws IOException {
         driver.get("https://amazon.com");
 
-        //
+        //Kaydettiğimiz ekran resmi her seferinde aynı dosyanın üzerine yazmaması için dosya isminden sonra bir tarih atayabiliriz
         String tarih=new SimpleDateFormat("_hh__mm_ss_ddMMyyyy").format(new Date());
         String dosyaYolu= "TestOutput/screenshot"+tarih+".png";
         TakesScreenshot ts= (TakesScreenshot) driver;

@@ -12,7 +12,7 @@ public class C01_AlertMethods extends TestBase {
 //3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna   tıklayın
 
         driver.findElement(By.xpath("//button[@onclick='jsPrompt()']")).click();
-        alertPromtBox("Hakan Kara");
+        alertprompt("Hakan Kara");
         bekle(3);
         alertAccept();
 

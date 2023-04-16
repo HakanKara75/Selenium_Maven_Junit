@@ -62,13 +62,13 @@ public class C01_WindowHandle extends TestBase {
         assertTrue(driver.getTitle().contains("LinkedIn"));
 
 //        techproeducation sayfasına geçiniz
-        switchTab(0);
+        switchToWindow(0);
 
 //        youtube sayfasına geçiniz
-        switchTab(1);
+        switchToWindow(1);
 
 //        linkedIn sayfasına geçiniz
-        switchTab(2);
+        switchToWindow(2);
 
     }
 
