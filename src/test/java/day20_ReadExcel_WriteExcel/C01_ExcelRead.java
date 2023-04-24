@@ -50,16 +50,21 @@ Cell cell12=sheet1.getRow(0).getCell(1);
     System.out.println(sheet1.getPhysicalNumberOfRows());//toplam kullanilmis satir sayisi -->12
 
 //    Ülke-Başkent şeklinde verileri yazdırın
-    Map<String , String > ulkelerVeBaskentler= new HashMap<>();
+    Map<String , String > ulkelerVeBaskentleri= new HashMap<>();
 
-    for (int satirIndex = 1; satirIndex < kullanilanToplamSatirSayisi; satirIndex++) {
-        String ulkeAdi= sheet1.getRow(satirIndex).getCell(0).toString();
-        String baskentAdi= sheet1.getRow(satirIndex).getCell(1).toString();
-        ulkelerVeBaskentler.put(ulkeAdi, baskentAdi);
+    try {
+        for (int satirIndeks = 1; satirIndeks < kullanilanToplamSatirSayisi; satirIndeks++) {
 
+            String ulkeAdi = sheet1.getRow(satirIndeks).getCell(0).toString();
+            String baskentAdi = sheet1.getRow(satirIndeks).getCell(1).toString();
+
+            ulkelerVeBaskentleri.put(ulkeAdi, baskentAdi);
+
+        }
+    }catch (Exception e){
 
     }
-    System.out.println(ulkelerVeBaskentler);
+    System.out.println(ulkelerVeBaskentleri);
 }
 
 

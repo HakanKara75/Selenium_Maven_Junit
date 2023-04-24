@@ -12,7 +12,7 @@ public class C01_Actions01 extends TestBase {
         ttps://the-internet.herokuapp.com/context_menu  sitesine gidin
         utuya sağ tıklayın
         lert'te cikan yazinin "You selected a context menu" oldugunu test edin
-        amam diyerek alert'i kapatın
+        tamam diyerek alert'i kapatın
         */
 
     @Test

@@ -33,6 +33,8 @@ public abstract class TestBase {
         driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        //Extent Report icin asagisi
         //----------------------------------------------------------------------------------------
         extentReports = new ExtentReports();
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
@@ -142,4 +144,46 @@ public abstract class TestBase {
             throw new RuntimeException(e);
         }
     }
+
+    //bu metot ile herhangi bir webelemente JavascriptExecutor kullanarak tiklayabilirim
+    public void clickByJavaScript(WebElement webElement){
+        JavascriptExecutor jse= (JavascriptExecutor) driver;
+
+        jse.executeScript("arguments[0].click();", webElement);
+
+    }
+
+    public void scrollIntoViewByJavaScript(WebElement webElement){
+        JavascriptExecutor jse=(JavascriptExecutor) driver;//Casting
+        jse.executeScript("arguments[0].scrollIntoView(true);",webElement);
+
+    }
+
+    //bu metot ile sayfayi en alta kaydirabilirim
+    public void scrollEndByJavaScript(){
+               JavascriptExecutor js= (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    //bu metot ile sayfayi en yukari kaydirabilirim
+    public void scrollTopByJavaScript(){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
+    }
+
+    public void typeWithJavaScript(WebElement webElement, String str){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value', '"+str+"')", webElement);
+    }
+
+//bu metot ile attribute degerleri ile texti alabilirim
+    public void getValueByJavaScript(String id, String attributeName){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        String string= js.executeScript("return document.getElementById('"+id+"')."+attributeName+"").toString();
+        System.out.println(string);
+        //        NOT: document.querySelector("p").value;  -> TAG KULLANILABILIR
+//             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR
+//             document.querySelector("#example").value; -> CSS DEGERI KULLANILABILIR
+    }
+
 }

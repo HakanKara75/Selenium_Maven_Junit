@@ -30,8 +30,8 @@ public class C01_FileUpload extends TestBase {
 
 //        "File Uploaded!" textinin görüntülendiğini test edin
         String actualText= driver.findElement(By.xpath("//h3[text()='File Uploaded!']")).getText();
-        String ecpectedText="File Uploaded!";
-        assertEquals(actualText, ecpectedText);
+       String expectedText="File Uploaded!";
+        assertEquals(actualText, expectedText);
 
         //2.yol
         WebElement fileUploadedText = driver.findElement(By.xpath("//h3"));
