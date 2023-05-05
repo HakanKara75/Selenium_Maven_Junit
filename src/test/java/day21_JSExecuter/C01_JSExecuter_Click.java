@@ -19,7 +19,14 @@ Sayfa adresinin "http://www.uitestpractice.com/Students/Form?optradio=on" olduğ
 */
     @Test
     public void name() {
-
+/*
+        Eğer bir web sayfasının HTML kodları tamamen yada kısmen JavaScript kullanılarak oluşturulduysa
+     o sayfaya müdahale etmek için genellikle JavaScriptExecutor arayüzünü kullanmak gerekir.
+        Bu durumda, sayfayı manipüle etmek veya etkileşimde bulunmak için standart WebDriver komutları
+     yetersiz kalabilir. Bu nedenle JSExecutor arayüzü, sayfanın JS kodlarına doğrudan erişebilir.
+        Ancak, mümkünse WebDriver'in sunduğu standart yöntemlerle sorunları çözmek her zaman daha iyidir.
+     Çünkü JS kullanımı, sayfanın daha yavaş yüklenmesine neden olabili.
+    */
 
 //http://www.uitestpractice.com/Students/Form sayfasına git
         driver.get("http://www.uitestpractice.com/Students/Form");
