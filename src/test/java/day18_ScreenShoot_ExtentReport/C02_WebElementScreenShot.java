@@ -29,7 +29,12 @@ public class C02_WebElementScreenShot extends TestBase {
         webelementi getScreenshotAs() methoduyla kullanarak resmini alabiliriz
          */
 
-
+        //screenshot 2. yol
+        WebElement sonucYazisi2= driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+        String tarih2=new SimpleDateFormat("_hh__mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu2= "TestOutput/webElementScreenShot"+tarih2+".png";
+        File file= sonucYazisi2.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File(dosyaYolu2));
 
 
     }
