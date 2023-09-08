@@ -26,6 +26,7 @@ public class C05_JSExecuter_GetValue extends TestBase {    //  1)getValueTest me
 //       String str= js.executeScript("return document.getElementById('checkin_date').value").toString();
 //        System.out.println(str);
 
+
         //2.yol metot ile
         getValueByJavaScript("checkin_date", "value");
     }

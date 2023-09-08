@@ -171,6 +171,12 @@ public abstract class TestBase {
         js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
     }
 
+    //elemente JavascriptExecutor ile string gonderir(java sendkey() ile ayni)
+    public static void sendKeyWithJavaScript(String string, WebElement webElement) {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;//Casting
+        jse.executeScript("arguments[0].value = '"+string+"';", webElement);
+
+    }
     public void typeWithJavaScript(WebElement webElement, String str){
         JavascriptExecutor js= (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('value', '"+str+"')", webElement);

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
@@ -15,7 +15,7 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     //a.	https://yahoo.com adresine gidiniz.
         driver.get("https://www.automationexercise.com/login");

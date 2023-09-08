@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class C02_DropDown {
     WebDriver driver;
@@ -21,7 +21,7 @@ public class C02_DropDown {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // https://testcenter.techproeducation.com/index.php?page=dropdown adresinegidin
         driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
 
