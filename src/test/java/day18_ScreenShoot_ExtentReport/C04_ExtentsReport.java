@@ -1,7 +1,6 @@
 package day18_ScreenShoot_ExtentReport;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -20,9 +19,7 @@ EXTENTREPORT kullanabilmemiz icin;
 3-HTML formatinda duzenlenecegi icin ExtentHtmlReporter class'indan obje olusturulur.
 4-Rapora test ile ilgili bilgiler girebilmek icin ExtentTest class'indan bir obje olusturulur
 */
-    ExtentReports extentReports;
-    ExtentHtmlReporter extentHtmlReporter;
-    ExtentTest extentTest;
+
 
     @Test
     public void test() {
@@ -47,6 +44,6 @@ EXTENTREPORT kullanabilmemiz icin;
         System.out.println(sonucYazisi.getText());
         extentTest.info("Sonuc yazısı konsola yazdırıldı");
         extentTest.pass("Sayfa kapatıldı");
-        extentReports.flush();
+
     }
 }
